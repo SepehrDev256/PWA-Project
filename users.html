@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/materialize-v1.0.0 (1)/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/materialize-v1.0.0 (1)/materialize/css/materialize-rtl.css">
+    <link rel="stylesheet" href="assets/css/util.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/JS.png">
+    <title>My Project</title>
+</head>
+<body class="grey darken-3" dir="rtl">
+
+    <!-- navbar -->
+    <nav class="grey darken-4 z-depth-0 top_navbar">
+        <div class="nav-wrapper">
+          <a href="#!" class="yellow-text hide-on-med-and-up">Users Management</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger yellow-text right"><i class="material-icons">menu</i></a>
+          <ul class="hide-on-med-and-down dis-flex">
+            <li><a href="sass.html" class="yellow-text">Sass</a></li>
+            <li><a href="badges.html" class="yellow-text">Components</a></li>
+            <li><a href="collapsible.html" class="yellow-text">Javascript</a></li>
+            <li><a href="mobile.html" class="yellow-text">Mobile</a></li>
+          </ul>
+        </div>
+    </nav>
+    
+    <ul class="sidenav grey darken-2" id="mobile-demo">
+        <li><div class="user-view">
+            <div class="background">
+              <img src="" class="w-full">
+            </div>
+            <a href="#user"><img class="circle" src=""></a>
+            <a><span class="white-text name">Sepehr Babaei</span></a>
+            <a><span class="white-text email">sepehr.Babaei256@gmail.com</span></a>
+          </div></li>
+          <li><a href="https://github.com/SepehrDev256"><i class="material-icons right">code</i>Github</a></li>
+          <li><div class="divider"></div></li>
+          <li><a href="#!">Linkdin</a></li>
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="index.html">Home</a></li>
+        <li><a class="waves-effect" href="users.html">Users</a></li>
+    </ul>
+    <!-- navbar -->
+
+    <!-- Main -->
+    <section id="top_action_section" class="row m-b-0 container">
+        <div class="p-l-10 p-r-10 p-t-10 col s12 m3 l2">
+            <button id="add_user_button" class="waves-effect waves-light btn yellow accent-2 black-text p-l-30 p-r-30 w-full rounded_pill flex-c">
+                <i class="material-icons m-r-5">add</i>
+                Add User
+            </button>
+        </div>
+        <div class="row col s12 m9 l8 m-b-0">
+            <div class="input-field col s12">
+                <input id="search" type="text" class="validate">
+                <label for="search" class="yellow-text">
+                    <i class="material-icons pos-relative top-7">search</i>
+                    Search
+                </label>
+            </div>
+        </div>
+        <div class="col l2 hide-on-med-and-down"></div>
+    </section>
+    <!-- Main -->
+
+    <!-- users -->
+    <section class="user_list_section">
+
+        <!-- table in mobile -->
+        <ul class="collapsible hide-on-med-and-up">
+            <li class="users_list_item">
+                <div class="collapsible-header">
+                    <i class="material-icons black-text yellow accent-2 users_list_arrow_icon trans-0-2">arrow_drop_down_circle</i>
+                    Sepehr Babaei
+                </div>
+                <div class="collapsible-body">
+                    <div class="p-all-5">
+                        <span class="f-bold">Username : </span>
+                        <span>Sepehr Babaei</span>
+                    </div>
+                    <div class="p-all-5">
+                        <span class="f-bold">Email : </span>
+                        <span>sepehr.Babaei@gmail.com</span>
+                    </div>
+                    <div class="p-all-5">
+                        <span class="f-bold">Address : </span>
+                        <span>Mashhad</span>
+                    </div>
+                    <div class="p-all-5">
+                        <span class="f-bold">Action : </span>
+                        <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
+                        <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- table in mobile -->
+
+        <!-- table -->
+        <div class="hide-on-med-and-down show-on-medium-and-up container">
+            <table class="striped highlight centered">
+                <thead>
+                  <tr class="yellow-text">
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Sepehr Babaei</td>
+                    <td>SepehrDev256</td>
+                    <td>sepehr.Babaei256@gmail.com</td>
+                    <td>Mashhad</td>
+                    <td>
+                        <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
+                        <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <!-- table -->
+
+        <!-- show and button -->
+        <div class="pagination_container container p-l-9 p-r-9 p-t-15 p-b-10 flex-sb-m pos-fixed left-0 right-0 bottom-0 z-depth-4 rounded_top_30">
+            <div class="pagination_item_counts flex-l p-l-10 flex-l-m">
+                showing
+                <span class="m-l-5 m-r-5 max-w-50">
+                    <input type="number" class="yellow-text darken-2 no-border center-align m-b-0" value="10">
+                </span>
+                of
+                <span class="yellow-text darken-2 m-l-5 m-r-5">100</span>
+            </div>
+            <div class="pagination_buttons">
+                <i class="material-icons yellow accent-2 black-text m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light rounded_pill">keyboard_arrow_right</i>
+                <i class="material-icons yellow accent-2 black-text m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light rounded_pill">keyboard_arrow_left</i>            </div>
+        </div>
+    </section>
+    <!-- users -->
+
+    <!-- mdal -->
+    <div class="add_user_modal_back dis-none"></div>
+    <div class="add_user_modal container rounded_top_30 trans-0-3">
+        <div class="row p-t-10 p-b-10 p-r-40 p-l-40 center-on-small-only">
+            <h5>
+                <i class="material-icons m-r-10 m-l-10 pos-relative top-4">person_add</i>
+                Add User
+            </h5>
+            <form action="">
+                <div class="input-field col s12">
+                    <input type="text" name="" id="name" class="validate">
+                    <label for="name">name:</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" name="" id="username" class="validate">
+                    <label for="username">username:</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="email" name="" id="email" class="validate">
+                    <label for="email">Email:</label>
+                </div>
+                <button type="button" class="waves-effect waves-light btn blue darken-1 m-t-20 m-b-10 w-full max-w-250 rounded_pill">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- mdal -->
+
+    <script src="assets/materialize-v1.0.0 (1)/materialize/js/materialize.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/users.js"></script>
+</body>
+</html>
