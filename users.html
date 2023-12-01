@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="assets/images/JS.png">
     <title>My Project</title>
 </head>
-<body class="grey darken-3" dir="rtl">
+<body class="grey darken-3" dir="rtl" x-data="usersData">
 
     <!-- navbar -->
     <nav class="grey darken-4 z-depth-0 top_navbar">
@@ -67,28 +67,39 @@
     </section>
     <!-- Main -->
 
+    <!-- spiner -->
+    <template x-if="isLoading">
+        <div class="center-align">
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+        </div>
+    </template>
+    <!-- spiner -->
+
     <!-- users -->
-    <section class="user_list_section">
+    <section class="user_list_section" x-init="getUsers()">
 
         <!-- table in mobile -->
         <ul class="collapsible hide-on-med-and-up">
+            <template x-for="user in users">
             <li class="users_list_item">
                 <div class="collapsible-header">
                     <i class="material-icons black-text yellow accent-2 users_list_arrow_icon trans-0-2">arrow_drop_down_circle</i>
-                    Sepehr Babaei
+                    <span x-text="user.name"></span>
                 </div>
                 <div class="collapsible-body">
                     <div class="p-all-5">
                         <span class="f-bold">Username : </span>
-                        <span>Sepehr Babaei</span>
+                        <span x-text="user.username"></span>
                     </div>
                     <div class="p-all-5">
                         <span class="f-bold">Email : </span>
-                        <span>sepehr.Babaei@gmail.com</span>
+                        <span x-text="user.email"></span>
                     </div>
                     <div class="p-all-5">
                         <span class="f-bold">Address : </span>
-                        <span>Mashhad</span>
+                        <span x-text="user.address.city"></span>
                     </div>
                     <div class="p-all-5">
                         <span class="f-bold">Action : </span>
@@ -97,6 +108,7 @@
                     </div>
                 </div>
             </li>
+            </template>
         </ul>
         <!-- table in mobile -->
 
@@ -115,17 +127,19 @@
                 </thead>
         
                 <tbody class="desktop_table_body">
-                  <tr>
-                    <td>1</td>
-                    <td>Sepehr Babaei</td>
-                    <td>SepehrDev256</td>
-                    <td>sepehr.Babaei256@gmail.com</td>
-                    <td>Mashhad</td>
-                    <td>
-                        <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
-                        <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-                    </td>
-                  </tr>
+                    <template x-for="user in users">
+                        <tr>
+                            <td x-text="user.id"></td>
+                            <td x-text="user.name"></td>
+                            <td x-text="user.username"></td>
+                            <td x-text="user.email"></td>
+                            <td x-text="user.address.city"></td>
+                            <td>
+                                <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
+                                <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
+                            </td>
+                          </tr>
+                    </template>
                 </tbody>
               </table>
         </div>
@@ -148,10 +162,7 @@
     </section>
     <!-- users -->
 
-    <section id="test_section" class="blue" x-data="mainData">
-        <span x-text="massage" class="red"></span>
-        <button class="btn" x-on:click="massage = 'I Love Alpine.js'">click</button>
-    </section>
+
 
     <!-- mdal -->
     <div class="add_user_modal_back dis-none"></div>
@@ -182,10 +193,12 @@
     </div>
     <!-- mdal -->
 
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="assets/js/alpineJsControllers/maincontroller.js"></script>
+    <script defer src="/assets/js/alpine.js"></script>
+    <script src="/assets/js/alpineJsContollers/usersController.js"></script>
+    <script src="/assets/js/alpineJsContollers/testController.js"></script>
+    <script src="/assets/js/axios.js"></script>
     <script src="assets/materialize-v1.0.0 (1)/materialize/js/materialize.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/users.js"></script>
+    <!-- <script src="/assets/js/app.js"></script> -->
+    <script src="/assets/js/users.js"></script>
 </body>
 </html>
