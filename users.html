@@ -114,7 +114,7 @@
                   </tr>
                 </thead>
         
-                <tbody>
+                <tbody class="desktop_table_body">
                   <tr>
                     <td>1</td>
                     <td>Sepehr Babaei</td>
@@ -148,6 +148,11 @@
     </section>
     <!-- users -->
 
+    <section id="test_section" class="blue" x-data="mainData">
+        <span x-text="massage" class="red"></span>
+        <button class="btn" x-on:click="massage = 'I Love Alpine.js'">click</button>
+    </section>
+
     <!-- mdal -->
     <div class="add_user_modal_back dis-none"></div>
     <div class="add_user_modal container rounded_top_30 trans-0-3">
@@ -177,6 +182,8 @@
     </div>
     <!-- mdal -->
 
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="assets/js/alpineJsControllers/maincontroller.js"></script>
     <script src="assets/materialize-v1.0.0 (1)/materialize/js/materialize.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/users.js"></script>
